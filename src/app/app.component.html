@@ -1,0 +1,18 @@
+<ngb-carousel #ngcarousel (slide)="slideActivate($event)" [showNavigationArrows]="true" [showNavigationIndicators]="true" interval="10000" [pauseOnHover]="true" [wrap]="true" [activeId]="'two'">
+    <ng-template ngbSlide id="{{i}}" *ngFor="let image of images; let i=index;">
+        <div class="picsum-img-wrapper">
+            <img src="{{image}}" alt="Angular Carousel {{i}}">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title {{i}}</h3>
+            <p>Description {{i}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<div class="text-center">
+    <button (click)="navigateToSlide('2')">Go to Slide Three</button>
+    <button (click)="getToPrev()">Prev</button>
+    <button (click)="goToNext()">Next</button>
+    <button (click)="stopCarousel()">Pause</button>
+</div>
